@@ -20,8 +20,8 @@ public class UserController {
     private UserInterface userInterface;
 
     @GetMapping(value = "/")
-    public String index(){
-        return "index";
+    public ResponseEntity<List<User>> userlist2(){
+        return ResponseEntity.ok(userService.listAll());
     }
 
     @GetMapping(value = "/get")

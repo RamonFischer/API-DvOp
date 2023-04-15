@@ -24,11 +24,7 @@ public class UserController {
         return ResponseEntity.ok(userService.listAll());
     }
 
-    @GetMapping(value = "/get")
-    public ResponseEntity<List<User>> userlist(){
-        return ResponseEntity.ok(userService.listAll());
-    }
-
+    
     @PostMapping(value = "/post")
     public /*ResponseEntity<User>*/ String createUser(@RequestBody User newUser){
         return "foi!";

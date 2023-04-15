@@ -19,8 +19,8 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private UserInterface userInterface;
+   /* @Autowired
+    private UserInterface userInterface;*/
 
     @GetMapping("/")
     public ModelAndView index(){
@@ -39,11 +39,11 @@ public class UserController {
         return ResponseEntity.status(201).body(userService.addUser(newUser));
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{email}")
     @Transactional
     public String deleteUser(@PathVariable String email ){
         userService.deleteEmail(email);
-        userInterface.deleteAll();
+        //userInterface.deleteAll();
         return email;
     }
 }

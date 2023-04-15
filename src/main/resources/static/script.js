@@ -34,7 +34,7 @@ function clean(){
 
 function deleteEmail() {
     const emailId = document.getElementById("deleteText").value;
-    fetch('https://testfullapi.azurewebsites.net/delete' + emailId, {
+    fetch('https://testfullapi.azurewebsites.net/delete/' + emailId, {
         method: 'DELETE',
         mode: 'cors'
       })

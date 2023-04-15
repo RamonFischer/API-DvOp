@@ -19,9 +19,9 @@ public class UserController {
     @Autowired
     private UserInterface userInterface;
 
-    @RequestMapping(value = "/")
+    @RequestMapping("/")
     public String index(){
-        return "digite pipipipopopop";
+        return "index";
     }
 
     @GetMapping(value = "/get")

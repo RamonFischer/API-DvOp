@@ -1,5 +1,6 @@
 package com.api.apiDvops.controller;
 
+import ch.qos.logback.core.model.Model;
 import com.api.apiDvops.DAO.UserInterface;
 import com.api.apiDvops.entity.User;
 import com.api.apiDvops.service.UserService;
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -19,9 +22,11 @@ public class UserController {
     @Autowired
     private UserInterface userInterface;
 
-    @RequestMapping("/")
-    public String index(){
-        return "Instrucoes";
+    @GetMapping("/")
+    public ModelAndView index(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("index");
+        return mv;
     }
 
     @GetMapping(value = "/get")
@@ -33,12 +38,6 @@ public class UserController {
     public ResponseEntity<User> createUser(@RequestBody User newUser){
         return ResponseEntity.status(201).body(userService.addUser(newUser));
     }
-
-    /*@PutMapping
-    public ResponseEntity<User> editUser(@RequestBody User newUser){
-        User user = userInterface.save(newUser);
-        return ResponseEntity.ok(user);
-    }*/
 
     @DeleteMapping("/delete")
     @Transactional

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="/static/script.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-API</title>
+</head>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 40px 0 40px 0;
+    color: aliceblue;
+}
+
+body{
+    background-color: rgb(22,6,6);
+}
+.box, form {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 250px;
+    height: 30px;
+    border-radius: 30px;
+    padding: 0 15px 0 15px;
+}
+
+button{
+    width: 150px;
+    height: 25px;
+}
+</style>
+
+<body>
+    <div class = "box">
+        <h1>Register</h1>
+        <form action ="">
+            <input type="text" class="name" name="name" placeholder="Name">
+            <input type="text" class="email"  name="email" placeholder="Email">
+            <input type="password" class="password"  name="password" placeholder="Password">
+            <input type="text" class="tel"  name="tel" placeholder="Telephone">
+            <button>Apply</button>
+        </form>
+        <h1>Delete</h1>
+        <form action ="">
+            <input type="text" id="deleteText" class="email" name="email" placeholder="Type your email">
+            <button id = "Delete">Delete</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,5 +1,6 @@
 package com.api.apiDvops.controller;
 
+import com.api.apiDvops.DAO.UserInterface;
 import com.api.apiDvops.entity.User;
 import com.api.apiDvops.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ import java.util.Optional;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserInterface userInterface;
 
     @GetMapping(value = "/get")
     public ResponseEntity<List<User>> userlist(){
@@ -31,11 +35,11 @@ public class UserController {
         return ResponseEntity.ok(user);
     }*/
 
-    @DeleteMapping("/delete/{email}")
+    @DeleteMapping("/delete")
     @Transactional
     public String deleteUser(@PathVariable String email ){
         userService.deleteEmail(email);
+        userInterface.deleteAll();
         return email;
     }
-
 }

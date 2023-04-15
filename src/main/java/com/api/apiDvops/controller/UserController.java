@@ -19,14 +19,20 @@ public class UserController {
     @Autowired
     private UserInterface userInterface;
 
+    @RequestMapping(value = "/")
+    public String index(){
+        return "digite pipipipopopop";
+    }
+
     @GetMapping(value = "/get")
     public ResponseEntity<List<User>> userlist(){
         return ResponseEntity.ok(userService.listAll());
     }
 
-    @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User newUser){
-        return ResponseEntity.status(201).body(userService.addUser(newUser));
+    @PostMapping(value = "/post")
+    public /*ResponseEntity<User>*/ String createUser(@RequestBody User newUser){
+        return "foi!";
+        //return ResponseEntity.status(201).body(userService.addUser(newUser));
     }
 
     /*@PutMapping

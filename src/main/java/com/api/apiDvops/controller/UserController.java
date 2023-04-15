@@ -19,7 +19,7 @@ public class UserController {
     @Autowired
     private UserInterface userInterface;
 
-    @RequestMapping("/")
+    @GetMapping(value = "/")
     public String index(){
         return "index";
     }

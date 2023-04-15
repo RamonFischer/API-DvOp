@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
@@ -32,9 +33,9 @@ public class UserController {
 
     @DeleteMapping("/delete/{email}")
     @Transactional
-    public ResponseEntity<?> deleteUser(@PathVariable String email ){
+    public String deleteUser(@PathVariable String email ){
         userService.deleteEmail(email);
-        return ResponseEntity.status(204).build();
+        return email;
     }
 
 }

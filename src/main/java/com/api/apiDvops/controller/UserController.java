@@ -30,7 +30,7 @@ public class UserController {
         return ResponseEntity.ok(user);
     }*/
 
-    @DeleteMapping("/{email}")
+    @DeleteMapping("/delete/{email}")
     @Transactional
     public ResponseEntity<?> deleteUser(@PathVariable String email ){
         userService.deleteEmail(email);

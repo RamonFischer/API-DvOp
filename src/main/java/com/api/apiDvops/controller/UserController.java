@@ -19,7 +19,7 @@ public class UserController {
     @Autowired
     private UserInterface userInterface;
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/aa")
     public ResponseEntity<List<User>> userlist2(){
         return ResponseEntity.ok(userService.listAll());
     }

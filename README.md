@@ -1,9 +1,9 @@
-# API FullStack hospedada na Azure
+# API FullStack hosted on Azure
 
-API na qual pode ser encontrada no link: https://testfullapi.azurewebsites.net/
+API which can be found at the link: https://testfullapi.azurewebsites.net/
 
-Deployada pela a Azure WebApp e usando SQL Server fornecida tambem pela Azure.
+Deployed by Azure WebApp and using SQL Server provided by Azure.
 
-Para verificar se seu dado foi consumido pelo banco de dados, so colocar "/get" no final da URL.
+To check if your data was consumed by the database, just put "/get" at the end of the URL.
 
-PS: Como ainda nao foi implementada nenhuma criptografia, as senhas tao amostra, entao porfavor nao utilzar sua senha real.
+PS: Since no encryption has yet been implemented, the passwords are are in evidence, so please do not use your real password.

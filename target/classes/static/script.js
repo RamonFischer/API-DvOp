@@ -6,7 +6,7 @@ const Ipassword = document.querySelector(".password");
 const Itel = document.querySelector(".tel");
 
 function register() {
-    fetch("http://localhost:8080/post",
+    fetch("https://testfullapi.azurewebsites.net/post",
     {
         headers: {
             'Accept': 'application/json',
@@ -34,7 +34,7 @@ function clean(){
 
 function deleteEmail() {
     const emailId = document.getElementById("deleteText").value;
-    fetch('http://localhost:8080/delete' + emailId, {
+    fetch('https://testfullapi.azurewebsites.net/delete/' + emailId, {
         method: 'DELETE',
         mode: 'cors'
       })
